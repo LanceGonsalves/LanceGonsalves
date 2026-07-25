@@ -89,6 +89,16 @@ An event-driven data lake on AWS, fully provisioned with **Terraform**. S3 event
 A batch ETL pipeline that models NYC Yellow Taxi trips into an analytics-ready **star schema**. **Idempotent and incremental per month**, with a **6-check data-quality gate** that stops bad data before analytics. The same Python + SQL runs zero-setup on **DuckDB** or production-like on **PostgreSQL** via Docker.<br>
 `Python` · `SQL` · `DuckDB` · `PostgreSQL` · `dimensional modeling` · `data quality`
 
+#### 🚗 [used-car-price-prediction](https://github.com/LanceGonsalves/used-car-price-prediction)
+
+![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/used-car-price-prediction?style=flat-square&color=4C6EF5)
+![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/used-car-price-prediction?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/used-car-price-prediction?style=flat-square)
+![Stars](https://img.shields.io/github/stars/LanceGonsalves/used-car-price-prediction?style=flat-square)
+
+End-to-end applied ML on a **402k-row** used-car dataset: careful missing-value imputation, feature engineering, PCA + Random-Forest feature selection, then a model bake-off won by a tuned **Gradient Boosting Regressor** (**test R² ≈ 0.89**). Predictions explained with **SHAP** and **partial-dependence / ICE** plots.<br>
+`Python` · `scikit-learn` · `Gradient Boosting` · `SHAP` · `feature engineering` · `model interpretability`
+
 ---
 
 ### 📊 GitHub stats
