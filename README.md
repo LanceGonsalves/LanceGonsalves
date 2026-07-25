@@ -69,31 +69,41 @@ I design **event-driven, infrastructure-as-code data platforms** and **dimension
 
 ### 🚀 Featured projects
 
-<p align="center">
-  <a href="https://github.com/LanceGonsalves/aws-serverless-data-lake">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=LanceGonsalves&repo=aws-serverless-data-lake&theme=tokyonight" alt="aws-serverless-data-lake">
-  </a>
-  <a href="https://github.com/LanceGonsalves/nyc-taxi-pipeline">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=LanceGonsalves&repo=nyc-taxi-pipeline&theme=tokyonight" alt="nyc-taxi-pipeline">
-  </a>
-</p>
+#### 🌊 [aws-serverless-data-lake](https://github.com/LanceGonsalves/aws-serverless-data-lake)
 
-**🌊 [aws-serverless-data-lake](https://github.com/LanceGonsalves/aws-serverless-data-lake)** — An event-driven data lake on AWS, fully provisioned with **Terraform**. S3 events trigger a **serverless ETL Lambda** that validates and flattens order events into **partitioned Parquet**, queried in place with **Athena**. Runs on real AWS *or* free/offline via LocalStack, and the core pipeline is proven end-to-end with a `moto` + `pytest` suite. *Terraform · S3 · Lambda · Glue · Athena · IAM · Parquet · CI*
+![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/aws-serverless-data-lake?style=flat-square&color=4C6EF5)
+![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/aws-serverless-data-lake?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/aws-serverless-data-lake?style=flat-square)
+![Stars](https://img.shields.io/github/stars/LanceGonsalves/aws-serverless-data-lake?style=flat-square)
 
-**🚕 [nyc-taxi-pipeline](https://github.com/LanceGonsalves/nyc-taxi-pipeline)** — A batch ETL pipeline that models NYC Yellow Taxi trips into an analytics-ready **star schema**. **Idempotent and incremental per month**, with a **6-check data-quality gate** that stops bad data before analytics. The same Python + SQL runs zero-setup on **DuckDB** or production-like on **PostgreSQL** via Docker. *Python · SQL · DuckDB · PostgreSQL · dimensional modeling · data quality*
+An event-driven data lake on AWS, fully provisioned with **Terraform**. S3 events trigger a **serverless ETL Lambda** that validates and flattens order events into **partitioned Parquet**, queried in place with **Athena**. Runs on real AWS *or* free/offline via LocalStack, and the core pipeline is proven end-to-end with a `moto` + `pytest` suite.<br>
+`Terraform` · `S3` · `Lambda` · `Glue` · `Athena` · `IAM` · `Parquet` · `CI`
+
+#### 🚕 [nyc-taxi-pipeline](https://github.com/LanceGonsalves/nyc-taxi-pipeline)
+
+![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/nyc-taxi-pipeline?style=flat-square&color=4C6EF5)
+![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+![Stars](https://img.shields.io/github/stars/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+
+A batch ETL pipeline that models NYC Yellow Taxi trips into an analytics-ready **star schema**. **Idempotent and incremental per month**, with a **6-check data-quality gate** that stops bad data before analytics. The same Python + SQL runs zero-setup on **DuckDB** or production-like on **PostgreSQL** via Docker.<br>
+`Python` · `SQL` · `DuckDB` · `PostgreSQL` · `dimensional modeling` · `data quality`
 
 ---
 
 ### 📊 GitHub stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=LanceGonsalves&show_icons=true&count_private=true&hide_border=true&theme=tokyonight">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LanceGonsalves&layout=compact&hide_border=true&langs_count=8&theme=tokyonight">
+  <img src="https://img.shields.io/github/followers/LanceGonsalves?style=for-the-badge&logo=github&labelColor=1F2430&color=4C6EF5">
+  &nbsp;
+  <img src="https://komarev.com/ghpvc/?username=LanceGonsalves&style=for-the-badge&color=4C6EF5&label=PROFILE+VIEWS">
 </p>
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=LanceGonsalves&hide_border=true&theme=tokyonight">
 </p>
+
+<p align="center"><sub>📈 My full contribution graph shows natively just below this README on my profile.</sub></p>
 
 ---
 
