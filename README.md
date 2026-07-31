@@ -16,10 +16,13 @@
 
 ### 👨‍💻 About me
 
-I design **event-driven, infrastructure-as-code data platforms** and **dimensional analytics warehouses**, then use SQL and Python to pull insight out of them. I care about the things that make data work trustworthy in production: **idempotent pipelines, data-quality gates, tested code, and reproducible infrastructure**. Everything I build runs end-to-end and is verified with automated tests before it ships.
+I build **machine-learning models** and the **data platforms** that feed them — from Terraform-provisioned AWS pipelines to dimensional warehouses to deep learning on medical images. I care about the things that make data work trustworthy: **honest evaluation, data-quality gates, tested code, and reproducible infrastructure**. Everything I build runs end-to-end and is verified with automated tests before it ships.
 
-- 🔭 Currently deepening my work across the **data engineering ↔ data science** boundary
-- 🛠️ Comfortable from **Terraform + AWS** all the way to **star-schema SQL and analytics**
+Most recently I audited a widely-used dermatoscopy dataset and showed that the standard way of splitting it **inflates reported accuracy by 10 points** — because a quarter of the images are duplicate views of the same lesion.
+
+- 🔭 Working across the **data engineering ↔ data science** boundary
+- 🛠️ Comfortable from **Terraform + AWS** to **PyTorch + Grad-CAM**
+- 🔍 Sceptical by default — I check whether a result is real before reporting it
 - ✅ Big on **testing, CI, and data quality** — pipelines that fail loudly, not silently
 - 📫 Reach me: **[LinkedIn](https://www.linkedin.com/in/lance-gonsalves/)** · **lancegonsalves009@gmail.com**
 
@@ -57,6 +60,14 @@ I design **event-driven, infrastructure-as-code data platforms** and **dimension
 ![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black)
 ![Glue Catalog](https://img.shields.io/badge/Glue%20Data%20Catalog-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
 
+**Deep Learning & Computer Vision**
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![timm](https://img.shields.io/badge/timm-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Transfer Learning](https://img.shields.io/badge/Transfer%20Learning-3776AB?style=for-the-badge)
+![Grad-CAM](https://img.shields.io/badge/Grad--CAM-explainability-8E44AD?style=for-the-badge)
+![Medical Imaging](https://img.shields.io/badge/Medical%20Imaging-16A085?style=for-the-badge)
+
 **Data Science & Analysis**
 
 ![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
@@ -68,6 +79,24 @@ I design **event-driven, infrastructure-as-code data platforms** and **dimension
 ---
 
 ### 🚀 Featured projects
+
+#### 🔬 [skin-lesion-leakage-benchmark](https://github.com/LanceGonsalves/skin-lesion-leakage-benchmark)
+
+![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/skin-lesion-leakage-benchmark?style=flat-square&color=4C6EF5)
+![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/skin-lesion-leakage-benchmark?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/skin-lesion-leakage-benchmark?style=flat-square)
+![Stars](https://img.shields.io/github/stars/LanceGonsalves/skin-lesion-leakage-benchmark?style=flat-square)
+
+*Most skin-cancer classifiers are evaluated on splits that leak. I measured how much.*
+Audited the **HAM10000** dermatoscopy dataset (10,015 images) and found **25% of it is
+redundant** — multiple photographs of the same lesion. A standard random split therefore
+leaves **40.6% of the "held-out" test set showing lesions the model already trained on**.
+Training an identical **EfficientNet-B0** on naive vs lesion-grouped splits — same seed,
+same hyperparameters, only the split differs — showed naive evaluation inflates **balanced
+accuracy by 10.3 points** and **melanoma recall by 15.8** (95% CIs disjoint). Includes
+duplicate detection via perceptual hashing and CNN embeddings, bootstrap confidence
+intervals, calibration analysis (ECE 0.116), and Grad-CAM interpretability.<br>
+`PyTorch` · `EfficientNet` · `transfer learning` · `computer vision` · `Grad-CAM` · `medical imaging` · `data curation`
 
 #### 🌊 [aws-serverless-data-lake](https://github.com/LanceGonsalves/aws-serverless-data-lake)
 
