@@ -7,9 +7,10 @@
 
 <p align="center">
   <a href="https://github.com/LanceGonsalves?tab=repositories"><img src="https://img.shields.io/badge/Focus-Data%20Engineering%20%2B%20Data%20Science-4C6EF5?style=flat-square"></a>
+  <img src="https://img.shields.io/badge/Transform-dbt-FF694B?style=flat-square&logo=dbt">
+  <img src="https://img.shields.io/badge/Orchestration-Dagster-4F43DD?style=flat-square&logo=dagster">
   <img src="https://img.shields.io/badge/Cloud-AWS-232F3E?style=flat-square&logo=amazonaws">
   <img src="https://img.shields.io/badge/IaC-Terraform-7B42BC?style=flat-square&logo=terraform">
-  <img src="https://img.shields.io/badge/Warehousing-Star%20Schema-1D9BF0?style=flat-square">
 </p>
 
 ---
@@ -21,7 +22,7 @@ I build **machine-learning models** and the **data platforms** that feed them �
 Most recently I audited a widely-used dermatoscopy dataset and showed that the standard way of splitting it **inflates reported accuracy by 10 points** — because a quarter of the images are duplicate views of the same lesion.
 
 - 🔭 Working across the **data engineering ↔ data science** boundary
-- 🛠️ Comfortable from **Terraform + AWS** to **PyTorch + Grad-CAM**
+- 🛠️ Comfortable from **dbt + Dagster** to **Terraform + AWS** to **PyTorch + Grad-CAM**
 - 🔍 Sceptical by default — I check whether a result is real before reporting it
 - ✅ Big on **testing, CI, and data quality** — pipelines that fail loudly, not silently
 - 📫 Reach me: **[LinkedIn](https://www.linkedin.com/in/lance-gonsalves/)** · **lancegonsalves009@gmail.com**
@@ -36,12 +37,14 @@ Most recently I audited a widely-used dermatoscopy dataset and showed that the s
 ![SQL](https://img.shields.io/badge/SQL-CC2927?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 
-**Data Engineering**
+**Analytics Engineering & Orchestration**
 
-![Airflow-style ETL](https://img.shields.io/badge/ETL%20%2F%20ELT-Pipelines-2C3E50?style=for-the-badge)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Dagster](https://img.shields.io/badge/Dagster-4F43DD?style=for-the-badge&logo=dagster&logoColor=white)
+![ETL / ELT](https://img.shields.io/badge/ETL%20%2F%20ELT-Pipelines-2C3E50?style=for-the-badge)
 ![Parquet](https://img.shields.io/badge/Apache%20Parquet-50ABF1?style=for-the-badge&logo=apacheparquet&logoColor=white)
-![Dimensional Modeling](https://img.shields.io/badge/Dimensional%20Modeling-Star%20Schema-8E44AD?style=for-the-badge)
-![Data Quality](https://img.shields.io/badge/Data%20Quality-Gates-27AE60?style=for-the-badge)
+![Dimensional Modeling](https://img.shields.io/badge/Dimensional%20Modelling-Star%20Schema-8E44AD?style=for-the-badge)
+![Data Quality](https://img.shields.io/badge/Data%20Quality-Gates%20%26%20Contracts-27AE60?style=for-the-badge)
 
 **Cloud & Infra**
 
@@ -75,6 +78,8 @@ Most recently I audited a widely-used dermatoscopy dataset and showed that the s
 ![PyArrow](https://img.shields.io/badge/PyArrow-4C4C4C?style=for-the-badge&logo=apache&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Altair](https://img.shields.io/badge/Altair-1F77B4?style=for-the-badge)
 
 ---
 
@@ -98,6 +103,18 @@ duplicate detection via perceptual hashing and CNN embeddings, bootstrap confide
 intervals, calibration analysis (ECE 0.116), and Grad-CAM interpretability.<br>
 `PyTorch` · `EfficientNet` · `transfer learning` · `computer vision` · `Grad-CAM` · `medical imaging` · `data curation`
 
+#### 🚕 [nyc-taxi-pipeline](https://github.com/LanceGonsalves/nyc-taxi-pipeline)
+
+![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/nyc-taxi-pipeline?style=flat-square&color=4C6EF5)
+![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+![Stars](https://img.shields.io/github/stars/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
+
+A full modern data stack in one repo. **Python** extracts and loads; **dbt** owns the modelling layer — a staging view, three dimensions and an **incremental fact table** (`delete+insert` per month) feeding five analytics marts, with **46 declarative tests** including a custom `accepted_range` macro. **Dagster** orchestrates it as **13 partitioned assets** with monthly backfills, retries, and a blocking asset check for the data-quality gate. A **Streamlit** dashboard reads the marts — and computes nothing itself, so a figure on screen can never disagree with SQL.
+
+Idempotent by design: re-running a month replaces it, never duplicates. A **source schema contract** fails fast when the TLC feed drifts, and rejected rows are persisted per reason so data quality is a *trend*, not a log line. **54 tests**, and CI runs the whole pipeline end to end then asserts idempotency and a gap-free date dimension.<br>
+`dbt` · `Dagster` · `Python` · `SQL` · `DuckDB` · `PostgreSQL` · `Streamlit` · `dimensional modelling` · `data quality` · `CI/CD`
+
 #### 🌊 [aws-serverless-data-lake](https://github.com/LanceGonsalves/aws-serverless-data-lake)
 
 ![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/aws-serverless-data-lake?style=flat-square&color=4C6EF5)
@@ -107,16 +124,6 @@ intervals, calibration analysis (ECE 0.116), and Grad-CAM interpretability.<br>
 
 An event-driven data lake on AWS, fully provisioned with **Terraform**. S3 events trigger a **serverless ETL Lambda** that validates and flattens order events into **partitioned Parquet**, queried in place with **Athena**. Runs on real AWS *or* free/offline via LocalStack, and the core pipeline is proven end-to-end with a `moto` + `pytest` suite.<br>
 `Terraform` · `S3` · `Lambda` · `Glue` · `Athena` · `IAM` · `Parquet` · `CI`
-
-#### 🚕 [nyc-taxi-pipeline](https://github.com/LanceGonsalves/nyc-taxi-pipeline)
-
-![Top language](https://img.shields.io/github/languages/top/LanceGonsalves/nyc-taxi-pipeline?style=flat-square&color=4C6EF5)
-![Last commit](https://img.shields.io/github/last-commit/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
-![Repo size](https://img.shields.io/github/repo-size/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
-![Stars](https://img.shields.io/github/stars/LanceGonsalves/nyc-taxi-pipeline?style=flat-square)
-
-A batch ETL pipeline that models NYC Yellow Taxi trips into an analytics-ready **star schema**. **Idempotent and incremental per month**, with a **6-check data-quality gate** that stops bad data before analytics. The same Python + SQL runs zero-setup on **DuckDB** or production-like on **PostgreSQL** via Docker.<br>
-`Python` · `SQL` · `DuckDB` · `PostgreSQL` · `dimensional modeling` · `data quality`
 
 #### 🚗 [used-car-price-prediction](https://github.com/LanceGonsalves/used-car-price-prediction)
 
