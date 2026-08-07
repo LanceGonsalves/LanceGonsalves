@@ -1,0 +1,18 @@
+# macOS Finder metadata — created automatically in any folder you open,
+# stores icon positions and window settings. Nothing to do with this repo.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows equivalents, in case anyone else ever clones this
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor scratch
+.vscode/
+.idea/
+*.swp
+*~
