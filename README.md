@@ -96,12 +96,16 @@ Most recently I audited a widely-used dermatoscopy dataset and showed that the s
 Audited the **HAM10000** dermatoscopy dataset (10,015 images) and found **25% of it is
 redundant** — multiple photographs of the same lesion. A standard random split therefore
 leaves **40.6% of the "held-out" test set showing lesions the model already trained on**.
-Training an identical **EfficientNet-B0** on naive vs lesion-grouped splits — same seed,
-same hyperparameters, only the split differs — showed naive evaluation inflates **balanced
-accuracy by 10.3 points** and **melanoma recall by 15.8** (95% CIs disjoint). Includes
-duplicate detection via perceptual hashing and CNN embeddings, bootstrap confidence
-intervals, calibration analysis (ECE 0.116), and Grad-CAM interpretability.<br>
-`PyTorch` · `EfficientNet` · `transfer learning` · `computer vision` · `Grad-CAM` · `medical imaging` · `data curation`
+Trained **EfficientNet-B0** on naive vs lesion-grouped splits, **replicated across 5
+seeds**: naive evaluation inflates **balanced accuracy by 5.30 points** (95% CI [3.70,
+6.90], paired t p=0.003). A single run had reported +10.3 — outside that interval, so
+replication halved the headline. Repeating it on **ResNet-18** held: **8 of 8 paired runs
+positive across two architectures**, so the effect is a property of the data, not the
+model. Holding one model fixed and sweeping test-set contamination 0→40% gave a **linear
+dose–response (R² 0.97)** — every 10 points of contamination buys **1.84 accuracy points**
+the model never earned. Includes duplicate detection via perceptual hashing and CNN
+embeddings, bootstrap CIs, calibration analysis (ECE 0.116), and Grad-CAM.<br>
+`PyTorch` · `EfficientNet` · `ResNet` · `transfer learning` · `computer vision` · `Grad-CAM` · `medical imaging` · `experimental design`
 
 #### 🚕 [nyc-taxi-pipeline](https://github.com/LanceGonsalves/nyc-taxi-pipeline)
 
